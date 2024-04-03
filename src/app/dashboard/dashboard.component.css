@@ -1,0 +1,24 @@
+.grid {
+  display: grid;
+  grid-gap: 20px;
+}
+
+.col-1-4 {
+  width: 25%;
+  padding: 10px;
+  background-color: #f4f4f4;
+  border-radius: 5px;
+  text-align: center;
+  text-decoration: none;
+  color: #333;
+  transition: background-color 0.3s ease;
+}
+
+.col-1-4:hover {
+  background-color: #ddd;
+}
+
+h3 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}

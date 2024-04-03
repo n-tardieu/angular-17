@@ -1,0 +1,8 @@
+<h3>Top Heroes</h3>
+<div class="grid grid-pad">
+    @for (hero of heroes; track hero.id) {
+        <a routerLink="/detail/{{ hero.id }}" class="col-1-4">{{ hero.name }}</a>
+    } @empty {
+        <p>There are no heroes.</p>
+    }
+</div>
