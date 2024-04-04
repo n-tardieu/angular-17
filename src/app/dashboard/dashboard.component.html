@@ -1,8 +1,17 @@
 <h3>Top Heroes</h3>
-<div class="grid grid-pad">
-    @for (hero of heroes; track hero.id) {
-        <a routerLink="/detail/{{ hero.id }}" class="col-1-4">{{ hero.name }}</a>
-    } @empty {
-        <p>There are no heroes.</p>
-    }
-</div>
+@defer (on timer(1s)) {
+    <div class="grid grid-pad">
+        @for (hero of heroes; track hero.id) {
+            <a routerLink="/detail/{{ hero.id }}" class="col-1-4">{{ hero.name }}</a>
+        } @empty {
+            <p>There are no heroes.</p>
+        }
+    </div>
+} 
+@placeholder {
+    <h4>Placeholder</h4>
+}
+@loading(minimum 2s) {
+    <h4>Loading...</h4>
+  }
+

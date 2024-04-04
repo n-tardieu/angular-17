@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HEROES } from './heroes.mock';
 import { Hero } from '../hero';
-import { BehaviorSubject, Observable, map } from 'rxjs';
+import { BehaviorSubject, Observable, delay, map } from 'rxjs';
 
 @Injectable({
   providedIn: 'root',
@@ -18,7 +18,7 @@ export class HeroService {
   }
 
   getHeroes(): Observable<Hero[]> {
-    return this.heroes$;
+    return this.heroes$.pipe(delay(1000));
   }
 
   getHero(id: number): any {
